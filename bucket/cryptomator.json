@@ -15,7 +15,11 @@
     "extract_dir": "PFiles64/Cryptomator",
     "post_install": [
         "    # Change appdata settings folder",
-        "(Get-Content \"$dir\\app\\Cryptomator.cfg\" -Encoding ASCII).replace('~/AppData/Roaming/Cryptomator', './data') | Set-Content \"$dir\\app\\Cryptomator.cfg\" -Encoding ASCII"
+            "$cfg = \"$dir\\app\\Cryptomator.cfg\"",
+            "$content = Get-Content $cfg -Encoding ASCII",
+            "$content = $content -replace '@{appdata}/Cryptomator', './data'",
+            "$content = $content -replace '@{userhome}/AppData/Roaming/Cryptomator', './data'",
+            "Set-Content $cfg -Encoding ASCII -Value $content"
     ],
     "bin": "Cryptomator.exe",
     "shortcuts": [
