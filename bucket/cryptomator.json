@@ -3,6 +3,7 @@
     "description": "Multi-platform transparent client-side encryption of files in the cloud",
     "homepage": "https://cryptomator.org",
     "license": "GPL-3.0-only",
+    "notes": "Run 'patchWebDAV.bat cryptomator-vault' with administrator privileges.",
     "suggest": {
         "WinFSP": "nonportable/winfsp-np"
     },
