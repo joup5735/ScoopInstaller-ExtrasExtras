@@ -19,7 +19,7 @@
             "$content = Get-Content $cfg -Encoding ASCII",
             "$content = $content -replace '@{appdata}/Cryptomator', './data'",
             "$content = $content -replace '@{userhome}/AppData/Roaming/Cryptomator', './data'",
-            "$content = $content -replace '.disableUpdateCheck=false', '.disableUpdateCheck=true",
+            "$content = $content -replace '.disableUpdateCheck=false', '.disableUpdateCheck=true'",
             "Set-Content $cfg -Encoding ASCII -Value $content"
     ],
     "bin": "Cryptomator.exe",
